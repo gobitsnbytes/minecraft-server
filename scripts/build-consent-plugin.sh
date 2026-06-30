@@ -69,11 +69,15 @@ if [[ ! -f "${API_JAR}" ]]; then
 fi
 
 download_maven_jar "net/kyori" "adventure-api" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-api-${PAPER_API_BOM_VERSION}.jar"
+download_maven_jar "net/kyori" "adventure-key" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-key-${PAPER_API_BOM_VERSION}.jar"
 download_maven_jar "net/kyori" "adventure-text-minimessage" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-text-minimessage-${PAPER_API_BOM_VERSION}.jar"
 download_maven_jar "net/kyori" "adventure-text-serializer-gson" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-text-serializer-gson-${PAPER_API_BOM_VERSION}.jar"
 download_maven_jar "net/kyori" "adventure-text-serializer-legacy" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-text-serializer-legacy-${PAPER_API_BOM_VERSION}.jar"
 download_maven_jar "net/kyori" "adventure-text-serializer-plain" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-text-serializer-plain-${PAPER_API_BOM_VERSION}.jar"
 download_maven_jar "net/kyori" "adventure-text-logger-slf4j" "${PAPER_API_BOM_VERSION}" "${LIB_DIR}/adventure-text-logger-slf4j-${PAPER_API_BOM_VERSION}.jar"
+download_maven_jar "net/kyori" "examination-api" "1.3.0" "${LIB_DIR}/examination-api-1.3.0.jar"
+download_maven_jar "net/kyori" "examination-string" "1.3.0" "${LIB_DIR}/examination-string-1.3.0.jar"
+download_maven_jar "org/jetbrains" "annotations" "26.0.2-1" "${LIB_DIR}/annotations-26.0.2-1.jar"
 download_maven_jar "net/md-5" "bungeecord-chat" "1.21-R0.2-deprecated+build.21" "${LIB_DIR}/bungeecord-chat-1.21-R0.2-deprecated+build.21.jar"
 download_maven_jar "com/google/guava" "guava" "33.3.1-jre" "${LIB_DIR}/guava-33.3.1-jre.jar"
 download_maven_jar "com/google/code/gson" "gson" "2.11.0" "${LIB_DIR}/gson-2.11.0.jar"
