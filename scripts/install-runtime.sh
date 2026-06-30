@@ -15,7 +15,7 @@ echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_COD
 apt-get update
 apt-get install -y --no-install-recommends \
   jq \
-  temurin-21-jdk-headless \
+  temurin-21-jdk \
   procps \
   python3 \
   rsync \
