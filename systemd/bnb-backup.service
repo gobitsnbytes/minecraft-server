@@ -1,0 +1,7 @@
+[Unit]
+Description=bits&bytes Minecraft Backup
+
+[Service]
+Type=oneshot
+ExecStart=/home/minecraft/server/scripts/backup.sh
+

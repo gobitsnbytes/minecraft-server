@@ -1,0 +1,12 @@
+bypass-ops: true
+rules:
+  header: "&6bits&bytes Minecraft Server"
+  lines:
+    - "&fOfficial digital fork of GOBITSNBYTES FOUNDATION."
+    - "&fPlayer safety matters."
+    - "&fPersonal payments to staff are prohibited."
+    - "&fPolicies: https://gobitsnbytes.org/coc"
+    - "&fPrivacy: https://gobitsnbytes.org/privacy"
+    - "&fTerms: https://gobitsnbytes.org/terms"
+    - "&fType &a/accept &fto continue playing."
+

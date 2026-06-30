@@ -1,0 +1,17 @@
+# name|source|identifier|target
+spark|spiget|57242|spark.jar
+PlaceholderAPI|spiget|6245|PlaceholderAPI.jar
+EssentialsX|spiget|9089|EssentialsX.jar
+CoreProtect|spiget|8631|CoreProtect.jar
+LuckPerms|spiget|28140|LuckPerms.jar
+nLogin|spiget|57272|nLogin.jar
+TAB|spiget|57806|TAB.jar
+ViaVersion|spiget|19254|ViaVersion.jar
+ViaBackwards|spiget|27448|ViaBackwards.jar
+Chunky|spiget|81534|Chunky.jar
+GSit|spiget|62325|GSit.jar
+InventoryRollbackPlus|spiget|85811|InventoryRollbackPlus.jar
+DiscordSRV|spiget|18494|DiscordSRV.jar
+Geyser|github|GeyserMC/Geyser|Geyser.jar
+Floodgate|github|GeyserMC/Floodgate|Floodgate.jar
+

@@ -1,0 +1,26 @@
+# Core gameplay and security defaults for the bits&bytes server.
+enable-jmx-monitoring=false
+rcon.port=25575
+enable-rcon=true
+rcon.password=change-me
+enable-query=false
+gamemode=survival
+force-gamemode=false
+difficulty=normal
+hardcore=false
+allow-flight=true
+pvp=true
+spawn-protection=16
+max-players=20
+view-distance=8
+simulation-distance=6
+network-compression-threshold=512
+online-mode=false
+prevent-proxy-connections=true
+enforce-secure-profile=false
+allow-nether=true
+level-name=world
+motd=bits&bytes Minecraft Server | official Foundation-operated service
+white-list=false
+pause-when-empty-seconds=-1
+

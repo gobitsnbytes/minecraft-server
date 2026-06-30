@@ -1,0 +1,6 @@
+plugins/consent-plugin/build/
+*.jar
+$null
+bitsnbytesMC_key.pem
+*.log
+

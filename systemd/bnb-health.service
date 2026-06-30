@@ -1,0 +1,7 @@
+[Unit]
+Description=bits&bytes Minecraft Health Check
+
+[Service]
+Type=oneshot
+ExecStart=/home/minecraft/server/scripts/health-check.sh
+

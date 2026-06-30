@@ -1,0 +1,28 @@
+[Unit]
+Description=bits&bytes Minecraft Server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=minecraft
+Group=minecraft
+WorkingDirectory=/home/minecraft/server
+EnvironmentFile=/home/minecraft/server/configs/server.env
+ExecStart=/usr/bin/bash -c 'exec "${JAVA_BIN}" ${JAVA_GC_FLAGS} ${JAVA_EXTRA_FLAGS} -Xms"${JAVA_XMS}" -Xmx"${JAVA_XMX}" -jar "${SERVER_JAR}" nogui'
+KillSignal=SIGINT
+Restart=on-failure
+RestartSec=10
+SuccessExitStatus=0 143
+TimeoutStopSec=120
+LimitNOFILE=100000
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+LockPersonality=true
+RestrictSUIDSGID=true
+
+[Install]
+WantedBy=multi-user.target

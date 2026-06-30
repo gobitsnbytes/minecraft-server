@@ -1,0 +1,11 @@
+[Unit]
+Description=Hourly health timer for bits&bytes Minecraft
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+RandomizedDelaySec=10m
+
+[Install]
+WantedBy=timers.target
+
