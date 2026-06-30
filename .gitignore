@@ -3,4 +3,5 @@ plugins/consent-plugin/build/
 $null
 bitsnbytesMC_key.pem
 *.log
-
+__pycache__/
+.commandcode/
