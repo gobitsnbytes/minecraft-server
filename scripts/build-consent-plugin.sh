@@ -25,8 +25,28 @@ ensure_dir "${LIB_DIR}" 0755
 
 API_JAR="${LIB_DIR}/paper-api-${PAPER_API_VERSION}.jar"
 if [[ ! -f "${API_JAR}" ]]; then
-  log INFO "Downloading Paper API ${PAPER_API_VERSION}"
-  download_file "https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/${PAPER_API_VERSION}/paper-api-${PAPER_API_VERSION}.jar" "${API_JAR}"
+  if [[ "${PAPER_API_VERSION}" == *SNAPSHOT ]]; then
+    snapshot_metadata_url="https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/${PAPER_API_VERSION}/maven-metadata.xml"
+    snapshot_jar_version="$(
+      curl -fsSL "${snapshot_metadata_url}" \
+        | awk '
+            /<snapshotVersion>/ {in_snapshot=1; want_jar=0; value=""}
+            in_snapshot && /<extension>jar<\/extension>/ {want_jar=1}
+            in_snapshot && /<value>/ {
+              sub(/.*<value>/, "")
+              sub(/<\/value>.*/, "")
+              if (want_jar) { print; exit }
+            }
+            /<\/snapshotVersion>/ {in_snapshot=0}
+          '
+    )"
+    [[ -n "${snapshot_jar_version}" ]] || die "Unable to resolve snapshot jar for ${PAPER_API_VERSION}"
+    log INFO "Downloading Paper API ${snapshot_jar_version}"
+    download_file "https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/${PAPER_API_VERSION}/paper-api-${snapshot_jar_version}.jar" "${API_JAR}"
+  else
+    log INFO "Downloading Paper API ${PAPER_API_VERSION}"
+    download_file "https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/${PAPER_API_VERSION}/paper-api-${PAPER_API_VERSION}.jar" "${API_JAR}"
+  fi
 fi
 
 log INFO "Compiling consent plugin"
