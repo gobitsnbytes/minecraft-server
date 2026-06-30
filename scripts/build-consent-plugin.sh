@@ -15,7 +15,7 @@ BUILD_DIR="${PLUGIN_DIR}/build"
 CLASSES_DIR="${BUILD_DIR}/classes"
 LIB_DIR="${BUILD_DIR}/lib"
 SERVER_JAR="${SERVER_JAR:-/home/minecraft/server/server.jar}"
-PAPER_API_PREFIX="${PAPER_API_PREFIX:-26.1.2}"
+PAPER_API_PREFIX="${PAPER_API_PREFIX:-1.21.11}"
 MAVEN_METADATA_URL="${MAVEN_METADATA_URL:-https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/maven-metadata.xml}"
 
 [[ -d "${PLUGIN_DIR}/src/main/java" ]] || die "Missing plugin source tree: ${PLUGIN_DIR}"

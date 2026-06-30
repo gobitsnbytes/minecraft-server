@@ -1,7 +1,7 @@
 name: bnb-consent
 version: 1.0.0
 main: org.gobitsnbytes.minecraft.consent.ConsentPlugin
-api-version: '26.1.2'
+api-version: '1.21'
 description: Enforces acceptance of Foundation rules before gameplay.
 author: bits&bytes
 commands:
