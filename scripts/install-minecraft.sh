@@ -158,13 +158,13 @@ install -m 0644 "${PROJECT_ROOT}/systemd/bnb-health.timer" /etc/systemd/system/b
 systemctl daemon-reload
 
 log INFO "Building consent plugin"
-"${PROJECT_ROOT}/scripts/build-consent-plugin.sh"
+bash "${PROJECT_ROOT}/scripts/build-consent-plugin.sh"
 install -d -m 0750 "${SERVER_PLUGINS}"
 install -m 0644 "${PROJECT_ROOT}/plugins/consent-plugin/build/bnb-consent.jar" "${SERVER_PLUGINS}/bnb-consent.jar"
 
 if [[ "${INSTALL_FULL_PLUGIN_STACK:-0}" == "1" ]]; then
   log INFO "Installing full plugin stack"
-  "${PROJECT_ROOT}/scripts/install-plugins.sh"
+  bash "${PROJECT_ROOT}/scripts/install-plugins.sh"
 fi
 
 log INFO "Installing local helper scripts"
