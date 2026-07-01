@@ -186,7 +186,7 @@ public final class ConsentPlugin extends JavaPlugin implements Listener {
         }
         String message = event.getMessage().trim().toLowerCase();
         String root = message.split("\\s+", 2)[0];
-        if ("/accept".equals(root) || "/rules".equals(root)) {
+        if ("/accept".equals(root) || "/rules".equals(root) || "/login".equals(root) || "/register".equals(root) || "/reg".equals(root) || "/l".equals(root)) {
             return;
         }
         event.setCancelled(true);
