@@ -46,13 +46,25 @@ while IFS='|' read -r name source identifier target; do
     spiget)
       download_spigot "${identifier}" "${SERVER_PLUGINS}/${target}"
       ;;
+    modrinth)
+      log INFO "Downloading Modrinth project ${identifier} -> ${target}"
+      url="$(curl -fsSL "https://api.modrinth.com/v2/project/${identifier}/version" | jq -r '.[0].files[0].url')"
+      [[ -n "${url}" && "${url}" != "null" ]] || die "Failed to resolve Modrinth URL for ${identifier}"
+      download_file "${url}" "${SERVER_PLUGINS}/${target}"
+      ;;
+    url)
+      log INFO "Downloading direct URL ${identifier} -> ${target}"
+      download_file "${identifier}" "${SERVER_PLUGINS}/${target}"
+      ;;
     github)
       case "${name}" in
         Geyser)
-          download_github_latest "${identifier}" '.*spigot.*\.jar$|.*paper.*\.jar$' "${SERVER_PLUGINS}/${target}"
+          log INFO "Downloading Geyser Spigot from geysermc.org -> ${SERVER_PLUGINS}/${target}"
+          download_file "https://download.geysermc.org/v2/projects/geyser/versions/latest/builds/latest/downloads/spigot" "${SERVER_PLUGINS}/${target}"
           ;;
         Floodgate)
-          download_github_latest "${identifier}" '.*bukkit.*\.jar$|.*spigot.*\.jar$' "${SERVER_PLUGINS}/${target}"
+          log INFO "Downloading Floodgate Spigot from geysermc.org -> ${SERVER_PLUGINS}/${target}"
+          download_file "https://download.geysermc.org/v2/projects/floodgate/versions/latest/builds/latest/downloads/spigot" "${SERVER_PLUGINS}/${target}"
           ;;
         *)
           die "Unsupported GitHub plugin entry: ${name}"
